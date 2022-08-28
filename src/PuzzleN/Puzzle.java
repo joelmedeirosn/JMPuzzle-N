@@ -56,7 +56,7 @@ public class Puzzle {
         return celulasOrdem;
     }
 
-    /*publicj boolean Posicao() {
+    /*public boolean Posicao() {
         boolean resposta = false;
         int[] g = new int[tamanhoJogo * tamanhoJogo];
         g = gabarito(tamanhoJogo);
