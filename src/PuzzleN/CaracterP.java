@@ -14,7 +14,7 @@ public class CaracterP extends Puzzle{
             setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
             return (getNumCelulas());
         } else {
-            System.out.println("Esse nivel nao existe");
+            System.out.println("Esse nivel nao existe sa");
             return (0);
         }
 
