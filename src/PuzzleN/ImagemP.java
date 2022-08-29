@@ -6,7 +6,6 @@ import java.util.Random;
 
 
 public class ImagemP extends Puzzle {
-    File folder;
 
 
     public int NiveldoPuzzle(int tamanhoJogo) {

@@ -3,24 +3,20 @@ package Interface;
 import javax.swing.*;
 import java.awt.*;
 
-public class JogoMenu extends JFrame {
-
-    private JPanel Menu;
-    private JLabel Title;
-    private JButton iniciarButton;
-    private JButton tipoButton;
-    private JButton dificuldadeButton;
-    private JButton sairButton;
-
-    public JogoMenu(String title){
+public class JogoDificuldade extends JFrame {
+    private JPanel Dificuldade;
+    private JButton a3x3Button;
+    private JButton a4x4Button;
+    private JButton confirmarButton;
+    public JogoDificuldade(String title){
         super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setContentPane(Menu);
+        setContentPane(Dificuldade);
 
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JogoMenu("menuPuzzle");
+        JFrame frame = new JogoDificuldade("dificuldadePuzzle");
         frame.setSize(new Dimension(500,500));
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -30,5 +26,4 @@ public class JogoMenu extends JFrame {
 
 
     }
-
 }

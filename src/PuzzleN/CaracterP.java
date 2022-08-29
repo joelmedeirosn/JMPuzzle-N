@@ -4,35 +4,44 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class CaracterP extends Puzzle{
-    private char[] celulaschar = new  char [] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
+    private char[] celulasChar = new  char [] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
 
 
     public int NiveldoPuzzle(int tamanhoJogo) {
-            if (tamanhoJogo > 2 && tamanhoJogo < 5) {
-            setTamanhoJogo(tamanhoJogo);
-            this.celulaschar= new char[getTamanhoJogo() * tamanhoJogo];
-            setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
-            return (getNumCelulas());
+            if (tamanhoJogo == 3) {
+                setTamanhoJogo(tamanhoJogo);
+                celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
+                setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
+                Randomizar(getNumCelulas(),celulasChar);
+                return (getNumCelulas());
+
+            }
+            if (tamanhoJogo == 5) {
+                setTamanhoJogo(tamanhoJogo);
+                celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
+                setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
+                Randomizar(getNumCelulas(),celulasChar);
+                return (getNumCelulas());
         } else {
-            System.out.println("Esse nivel nao existe sa");
+            System.out.println("Esse nivel nao existe ");
             return (0);
         }
 
     }
-    public void Randomizar(int numCelulas){
+    public void Randomizar(int numCelulas, char[] celulasChar){
         setNumCelulas(numCelulas);
         Random random = new Random();
-        this.celulaschar[getNumCelulas()]= ' ';
+        celulasChar[getNumCelulas()]= ' ';
         setBranco(0);
-        for (int i = 0; i < celulaschar.length; i++) {
-            int rand = random.nextInt(celulaschar.length);
-            char prov= celulaschar[i];
-            celulaschar[i] = celulaschar[rand];
-            celulaschar[rand]=prov;
+        for (int i = 0; i < celulasChar.length; i++) {
+            int rand = random.nextInt(celulasChar.length);
+            char prov= celulasChar[i];
+            celulasChar[i] = celulasChar[rand];
+            celulasChar[rand]=prov;
 
 
         }
-        System.out.print(Arrays.toString(celulaschar));
+        System.out.print(Arrays.toString(celulasChar));
 
 
     }
