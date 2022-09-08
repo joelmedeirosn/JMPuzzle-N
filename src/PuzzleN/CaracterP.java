@@ -16,7 +16,7 @@ public class CaracterP extends Puzzle{
                 return (getNumCelulas());
 
             }
-            if (tamanhoJogo == 5) {
+            if (tamanhoJogo == 4) {
                 setTamanhoJogo(tamanhoJogo);
                 celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
                 setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);

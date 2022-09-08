@@ -10,10 +10,13 @@ public class Main {
         System.out.println("Digite seu nome:");
         x = input.nextLine();
         Puzzle.setNomeUsuario(x);
-        System.out.println("Tamanho do jogo ");
+        System.out.println("Tamanho do jogo:");
         y = input.nextInt();
         Puzzle jogo1 = new Puzzle();
         jogo1.NiveldoPuzzle(y);
+
+
+
 
 
 

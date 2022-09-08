@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import java.awt.Color;
 
 public class Puzzle {
 
@@ -11,6 +12,8 @@ public class Puzzle {
     private int tamanhoCelula;
     private int numCelulas;
     private int branco;
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String RESET = "\033[0m";
 
 
     public int NiveldoPuzzle(int tamanhoJogo) {
@@ -22,6 +25,7 @@ public class Puzzle {
                 celulas[i]=i;
             }
             Randomizar(getNumCelulas(), celulas);
+
             return (getNumCelulas());
         } else {
             System.out.println("Esse nivel nao existe");
@@ -30,12 +34,11 @@ public class Puzzle {
 
     }
 
-    public void Randomizar(int numCelulas,int celulas[]) {
+    public void Randomizar(int numCelulas, int[] celulas) {
         Set<Integer> numeros = new HashSet<>();
         setNumCelulas(numCelulas);
         Random random = new Random();
         setBranco(0);
-
 
         for (int i = 0; i < celulas.length; i++) {
             int rand = random.nextInt(celulas.length);
@@ -44,39 +47,43 @@ public class Puzzle {
             celulas[rand]=prov;
 
         }
+        Posicao(celulas);
 
         System.out.print(Arrays.toString(celulas));
 
     }
     public int[] gabarito(int x){
         int [] celulasOrdem = new int[x*x];
-        for (int i = 0; i < x*x; i++){
-            celulasOrdem[i] = i+1;
+        for (int i = 1; i < x*x; i++){
+            celulasOrdem[i] = i;
         }
         return celulasOrdem;
     }
 
-    /*public boolean Posicao() {
-        boolean resposta = false;
-        int[] g = new int[tamanhoJogo * tamanhoJogo];
+    public void Posicao( int[] celulas) {
+        int[] g;
         g = gabarito(tamanhoJogo);
-        if (tamanhoJogo == 3) {
-            for (int i = 0; i < 9; i++) {
-                if (celulas[i] == g[i]) {
-                    resposta = true;
-                }
-            }
-        } else {
-            for (int i = 0; i < 16; i++) {
-                if (celulas[i] == g[i]) {
-                    resposta = true;
+        StringBuilder sb = new StringBuilder();
 
-                }
+        if (tamanhoJogo == 3) {
+            for (int i = 1; i < 9; i++) {
+                if (celulas[i-1] == g[i]) {
+                    System.out.println("!"+i+"!");
+                    }
+            }
+            if (celulas[8]==0){
+                System.out.println("!"+0+"!");
+            }
+        } else if (tamanhoJogo == 4) {
+            for (int i = 1; i < 16; i++) {
+                if (celulas[i-1] == g[i]) {
+                    System.out.println("!"+i+"!");}
+            }
+            if (celulas[15]==0){
+                System.out.println("!"+0+"!");
             }
         }
-        return resposta;
-
-    }*/
+    }
             public void setTamanhoJogo ( int tamanhoJogo){
                 this.tamanhoJogo = tamanhoJogo;
             }
