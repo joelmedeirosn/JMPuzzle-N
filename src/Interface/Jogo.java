@@ -13,6 +13,7 @@ public class Jogo extends JPanel{
     public void Iniciar(){
         setSize(new Dimension(500,500));
         setVisible(true);
+        System.out.println("a");
     }
 }
 
