@@ -1,29 +1,53 @@
 package Interface;
 
+import PuzzleN.Puzzle;
+import PuzzleN.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class JogoTipo extends JFrame{
+public class JogoTipo extends JFrame implements ActionListener {
     private JButton confirmarButton;
     private JPanel Tipo;
     private JButton caracteresButton;
-    private JButton númerosButton;
+    private JButton numerosButton;
     private JButton imagensButton;
     private JLabel Title;
 
-    public JogoTipo(String title){
-        super(title);
+
+    public JogoTipo(){
+
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(Tipo);
+        setSize(new Dimension(500, 500));
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+
+        confirmarButton.addActionListener(this);
+        numerosButton.addActionListener(this);
+        imagensButton.addActionListener(this);
+        caracteresButton.addActionListener(this);
 
     }
-    public static void main(String[] args) {
-        JFrame frame = new JogoTipo("tipoPuzzle");
-        frame.setSize(new Dimension(500,500));
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==confirmarButton){
+            setVisible(false);
+            JogoMenu iniciar = new JogoMenu();
+        }
+        if(e.getSource()==numerosButton){
 
-        frame.setVisible(true);
+        }
+        if(e.getSource()==imagensButton){
+
+        }
+        if(e.getSource()==caracteresButton){
+
+        }
     }
 }

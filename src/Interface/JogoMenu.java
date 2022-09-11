@@ -1,5 +1,7 @@
 package Interface;
 
+import PuzzleN.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +20,10 @@ public class JogoMenu extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(Menu);
+        setSize(new Dimension(500,500));
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
 
         iniciarButton.addActionListener(this);
         tipoButton.addActionListener(this);
@@ -27,28 +33,24 @@ public class JogoMenu extends JFrame implements ActionListener {
 
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JogoMenu();
-        frame.setSize(new Dimension(500,500));
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setVisible(true);
-
-
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==iniciarButton){
-            Jogo iniciar = new Jogo();
-            setContentPane(iniciar);
-            iniciar.revalidate();
+            setVisible(false);
+            String playerName = JOptionPane.showInputDialog(null,"Digite seu nome");
+            Usuario usuario = new Usuario();
+            usuario.setNomeUsuario(playerName);
+
+            Jogo iniciar = new Jogo(playerName);
         }
         if(e.getSource()==tipoButton){
-            System.out.println("bb");
+            setVisible(false);
+            JogoTipo iniciar = new JogoTipo();
         }
         if(e.getSource()==dificuldadeButton){
-
+            setVisible(false);
+            JogoDificuldade iniciar = new JogoDificuldade();
         }
         if(e.getSource()==sairButton){
             System.exit(0);

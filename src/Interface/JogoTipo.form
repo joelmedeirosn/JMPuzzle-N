@@ -42,7 +42,7 @@
           <text value="Caracteres"/>
         </properties>
       </component>
-      <component id="ade7" class="javax.swing.JButton" binding="númerosButton" default-binding="true">
+      <component id="ade7" class="javax.swing.JButton" binding="numerosButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="200" height="60"/>
