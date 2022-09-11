@@ -1,8 +1,5 @@
 package Interface;
 
-import PuzzleN.Puzzle;
-import PuzzleN.Usuario;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,10 +12,13 @@ public class JogoTipo extends JFrame implements ActionListener {
     private JButton numerosButton;
     private JButton imagensButton;
     private JLabel Title;
+    private JButton voltar;
+    private JogoUsuario usuario;
 
 
-    public JogoTipo(){
+    public JogoTipo(JogoUsuario usuario){
 
+        this.usuario = usuario;
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(Tipo);
@@ -27,27 +27,37 @@ public class JogoTipo extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
 
-        confirmarButton.addActionListener(this);
         numerosButton.addActionListener(this);
         imagensButton.addActionListener(this);
         caracteresButton.addActionListener(this);
+        voltar.addActionListener(this);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==confirmarButton){
-            setVisible(false);
-            JogoMenu iniciar = new JogoMenu();
-        }
+
         if(e.getSource()==numerosButton){
+            setVisible(false);
+            usuario.setTipo("num");
+            JogoDificuldade dific = new JogoDificuldade(usuario);
 
         }
         if(e.getSource()==imagensButton){
+            setVisible(false);
+            usuario.setTipo("imagem");
+            JogoDificuldade dific = new JogoDificuldade(usuario);
 
         }
         if(e.getSource()==caracteresButton){
+            setVisible(false);
+            usuario.setTipo("char");
+            JogoDificuldade dific = new JogoDificuldade(usuario);
 
+        }
+        if(e.getSource()==voltar){
+            setVisible(false);
+            JogoMenu menu = new JogoMenu();
         }
     }
 }

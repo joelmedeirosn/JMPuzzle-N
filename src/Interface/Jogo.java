@@ -1,5 +1,7 @@
 package Interface;
 
+import PuzzleN.Puzzle;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +14,7 @@ public class Jogo extends JFrame implements ActionListener {
     private JLabel nome;
 
 
-    public Jogo(String playerName){
+    public Jogo(String playerName,int nivel,String tipo){
 
         nome.setText(playerName);
 
@@ -24,6 +26,14 @@ public class Jogo extends JFrame implements ActionListener {
         setVisible(true);
 
         Reset.addActionListener(this);
+
+        Puzzle teste = new Puzzle();
+        teste.NiveldoPuzzle(nivel);
+
+        System.out.println(tipo);
+
+
+
     }
 
     @Override

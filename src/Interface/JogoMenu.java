@@ -1,5 +1,6 @@
 package Interface;
 
+import PuzzleN.Puzzle;
 import PuzzleN.Usuario;
 
 import javax.swing.*;
@@ -15,6 +16,8 @@ public class JogoMenu extends JFrame implements ActionListener {
     private JButton tipoButton;
     private JButton dificuldadeButton;
     private JButton sairButton;
+    private int nivel;
+    private String tipo;
 
     public JogoMenu(){
 
@@ -26,7 +29,6 @@ public class JogoMenu extends JFrame implements ActionListener {
         setVisible(true);
 
         iniciarButton.addActionListener(this);
-        tipoButton.addActionListener(this);
         dificuldadeButton.addActionListener(this);
         sairButton.addActionListener(this);
 
@@ -39,21 +41,20 @@ public class JogoMenu extends JFrame implements ActionListener {
         if(e.getSource()==iniciarButton){
             setVisible(false);
             String playerName = JOptionPane.showInputDialog(null,"Digite seu nome");
-            Usuario usuario = new Usuario();
+
+            JogoUsuario usuario = new JogoUsuario();
             usuario.setNomeUsuario(playerName);
 
-            Jogo iniciar = new Jogo(playerName);
+            JogoTipo tipo = new JogoTipo(usuario);
+
+
         }
-        if(e.getSource()==tipoButton){
-            setVisible(false);
-            JogoTipo iniciar = new JogoTipo();
-        }
-        if(e.getSource()==dificuldadeButton){
-            setVisible(false);
-            JogoDificuldade iniciar = new JogoDificuldade();
-        }
-        if(e.getSource()==sairButton){
+
+        else if(e.getSource()==sairButton){
             System.exit(0);
         }
     }
+
+
+
 }

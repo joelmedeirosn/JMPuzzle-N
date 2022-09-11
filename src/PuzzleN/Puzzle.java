@@ -1,10 +1,12 @@
 package PuzzleN;
 
+import Interface.Jogo;
+import Interface.JogoMenu;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-import java.awt.Color;
 
 public class Puzzle {
 
@@ -16,8 +18,8 @@ public class Puzzle {
     public static final String RESET = "\033[0m";
 
 
-    public int NiveldoPuzzle(int tamanhoJogo) {
-        if (tamanhoJogo > 2 && tamanhoJogo < 5) {
+    public void NiveldoPuzzle(int tamanhoJogo) {
+
             setTamanhoJogo(tamanhoJogo);
             setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
             int [] celulas= new int [getNumCelulas()+1];
@@ -26,16 +28,11 @@ public class Puzzle {
             }
             Randomizar(getNumCelulas(), celulas);
 
-            return (getNumCelulas());
-        } else {
-            System.out.println("Esse nivel nao existe");
-            return (0);
         }
 
-    }
+
 
     public void Randomizar(int numCelulas, int[] celulas) {
-        Set<Integer> numeros = new HashSet<>();
         setNumCelulas(numCelulas);
         Random random = new Random();
         setBranco(0);
@@ -45,10 +42,8 @@ public class Puzzle {
             int prov= celulas[i];
             celulas[i] = celulas[rand];
             celulas[rand]=prov;
-
         }
         Posicao(celulas);
-
         System.out.print(Arrays.toString(celulas));
 
     }

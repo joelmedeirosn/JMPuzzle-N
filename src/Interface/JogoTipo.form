@@ -10,23 +10,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="21fce" class="javax.swing.JButton" binding="confirmarButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="50"/>
-            <preferred-size width="100" height="50"/>
-            <maximum-size width="100" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-7995336"/>
-          <enabled value="true"/>
-          <font name="Berlin Sans FB Demi" size="12" style="1"/>
-          <foreground color="-148688"/>
-          <hideActionText value="false"/>
-          <text value="Confirmar"/>
-        </properties>
-      </component>
       <component id="5e66" class="javax.swing.JButton" binding="caracteresButton" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -81,6 +64,20 @@
           <font name="Berlin Sans FB Demi" size="45" style="1"/>
           <foreground color="-148688"/>
           <text value="N-Puzzle"/>
+        </properties>
+      </component>
+      <component id="c0a48" class="javax.swing.JButton" binding="voltar">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7995336"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-148688"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Voltar"/>
         </properties>
       </component>
     </children>

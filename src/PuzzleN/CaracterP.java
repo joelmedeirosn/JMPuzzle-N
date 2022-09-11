@@ -7,13 +7,13 @@ public class CaracterP extends Puzzle{
     private char[] celulasChar = new  char [] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
 
 
-    public int NiveldoPuzzle(int tamanhoJogo) {
+    public void NiveldoPuzzle(int tamanhoJogo) {
             if (tamanhoJogo == 3) {
                 setTamanhoJogo(tamanhoJogo);
                 celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
                 setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
                 Randomizar(getNumCelulas(),celulasChar);
-                return (getNumCelulas());
+                return;
 
             }
             if (tamanhoJogo == 4) {
@@ -21,11 +21,9 @@ public class CaracterP extends Puzzle{
                 celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
                 setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
                 Randomizar(getNumCelulas(),celulasChar);
-                return (getNumCelulas());
-        } else {
+            } else {
             System.out.println("Esse nivel nao existe ");
-            return (0);
-        }
+            }
 
     }
     public void Randomizar(int numCelulas, char[] celulasChar){
