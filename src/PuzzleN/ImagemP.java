@@ -14,7 +14,7 @@ public class ImagemP extends Puzzle {
             File [] lista = folder.listFiles();
             setTamanhoJogo(tamanhoJogo);
             setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
-            RandomizarImagem(getNumCelulas(), lista);
+                RandomizarImagem(getNumCelulas(), lista);
 
         } else if (tamanhoJogo == 4){
             File folder = new File ("C:\\Users\\prude\\IdeaProjects\\Puzzle-N-master\\bob esponja 16");

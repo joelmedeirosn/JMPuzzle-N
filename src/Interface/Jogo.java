@@ -146,8 +146,10 @@ public class Jogo extends JFrame implements ActionListener {
                     botao[i][j].setBackground(new Color(134,0,56));
                     botao[i][j].setForeground(new Color(253,187,48));
                     botao[i][j].setFont(new Font("Sans-serif",Font.BOLD,50));
+
                     int A = array[k]+64;
                     char c=(char)A;
+
                     botao[i][j].setText(String.valueOf(c));
                 }
                 k++;
@@ -186,7 +188,7 @@ public class Jogo extends JFrame implements ActionListener {
 
 
         botao = new JButton[nivel][nivel];
-        ImagemP a = new ImagemP();
+        Puzzle a = new Puzzle();
         array = a.NiveldoPuzzle(nivel);
 
         int k = 0;
@@ -197,16 +199,29 @@ public class Jogo extends JFrame implements ActionListener {
                 if(String.valueOf(array[k]).equals("0")){
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(4,30,66));
+                    botao[i][j].setForeground(new Color(255, 255, 255, 255));
                     botao[i][j].setFont(new Font("",Font.BOLD,0));
+
+                    botao[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                     botao[i][j].setText(String.valueOf(array[k]));
 
                 }
                 else{
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(134,0,56));
-                    botao[i][j].setForeground(new Color(253,187,48));
-                    botao[i][j].setFont(new Font("Sans-serif",Font.BOLD,50));
+                    botao[i][j].setForeground(new Color(255, 255, 255, 255));
+                    botao[i][j].setFont(new Font("",Font.BOLD,50));
+
+                    botao[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                     botao[i][j].setText(String.valueOf(array[k]));
+
+                    if(usuario.getNivel()==3) {
+                        botao[i][j].setIcon(new ImageIcon(getClass().getResource("/bobesponja9/" + (botao[i][j].getText()) + ".png")));
+                    }
+                    else if(usuario.getNivel()==4){
+                        botao[i][j].setIcon(new ImageIcon(getClass().getResource("/bobesponja16/" + (botao[i][j].getText()) + ".png")));
+                    }
+
                 }
                 k++;
                 grid.add(botao[i][j]);
@@ -241,7 +256,7 @@ public class Jogo extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==Reset){
             setVisible(false);
-            JogoMenu iniciar = new JogoMenu();
+            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
 
         }
     }
