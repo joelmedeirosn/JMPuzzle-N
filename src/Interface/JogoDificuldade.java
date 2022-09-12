@@ -10,6 +10,7 @@ public class JogoDificuldade extends JFrame implements ActionListener{
     private JButton a3x3Button;
     private JButton a4x4Button;
     private JButton voltar;
+    private JButton a2x2Button;
     private JButton confirmarButton;
     private JogoUsuario usuario;
 
@@ -24,9 +25,9 @@ public class JogoDificuldade extends JFrame implements ActionListener{
         setResizable(false);
         setVisible(true);
 
-
-        a4x4Button.addActionListener(this);
+        a2x2Button.addActionListener(this);
         a3x3Button.addActionListener(this);
+        a4x4Button.addActionListener(this);
         voltar.addActionListener(this);
     }
 
@@ -34,18 +35,20 @@ public class JogoDificuldade extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource()==a3x3Button){
+        if(e.getSource()==a2x2Button){
+            setVisible(false);
+            usuario.setNivel(2);
+            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
+        }
+        else if(e.getSource()==a3x3Button){
             setVisible(false);
             usuario.setNivel(3);
             Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
-
-
         }
         else if(e.getSource()==a4x4Button){
             setVisible(false);
             usuario.setNivel(4);
             Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
-
         }
 
         else if(e.getSource()==voltar){

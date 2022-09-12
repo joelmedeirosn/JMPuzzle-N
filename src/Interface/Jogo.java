@@ -215,7 +215,10 @@ public class Jogo extends JFrame implements ActionListener {
                     botao[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                     botao[i][j].setText(String.valueOf(array[k]));
 
-                    if(usuario.getNivel()==3) {
+                    if (usuario.getNivel()==2) {
+                        botao[i][j].setIcon(new ImageIcon(getClass().getResource("/bobesponja2/" + (botao[i][j].getText()) + ".png")));
+                    }
+                    else if(usuario.getNivel()==3) {
                         botao[i][j].setIcon(new ImageIcon(getClass().getResource("/bobesponja9/" + (botao[i][j].getText()) + ".png")));
                     }
                     else if(usuario.getNivel()==4){
