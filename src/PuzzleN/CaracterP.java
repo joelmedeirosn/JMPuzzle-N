@@ -1,32 +1,22 @@
 package PuzzleN;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class CaracterP extends Puzzle{
     private char[] celulasChar = new  char [] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
 
 
-    public void NiveldoPuzzle(int tamanhoJogo) {
-            if (tamanhoJogo == 3) {
+    public char[] NiveldoPuzzleC(int tamanhoJogo) {
                 setTamanhoJogo(tamanhoJogo);
                 celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
                 setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
                 Randomizar(getNumCelulas(),celulasChar);
-                return;
 
-            }
-            if (tamanhoJogo == 4) {
-                setTamanhoJogo(tamanhoJogo);
-                celulasChar= new char[getTamanhoJogo() * tamanhoJogo];
-                setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
-                Randomizar(getNumCelulas(),celulasChar);
-            } else {
-            System.out.println("Esse nivel nao existe ");
-            }
+            return Randomizar(getNumCelulas(),celulasChar);
 
     }
-    public void Randomizar(int numCelulas, char[] celulasChar){
+
+    public char[] Randomizar(int numCelulas, char[] celulasChar){
         setNumCelulas(numCelulas);
         Random random = new Random();
         celulasChar[getNumCelulas()]= ' ';
@@ -36,10 +26,8 @@ public class CaracterP extends Puzzle{
             char prov= celulasChar[i];
             celulasChar[i] = celulasChar[rand];
             celulasChar[rand]=prov;
-
-
         }
-        System.out.print(Arrays.toString(celulasChar));
+        return celulasChar;
 
 
     }

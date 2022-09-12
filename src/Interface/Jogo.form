@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface.Jogo">
-  <grid id="27dc6" binding="JogoPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="10" left="10" bottom="10" right="10"/>
+  <grid id="27dc6" binding="JogoPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="597" height="441"/>
     </constraints>
     <properties>
-      <background color="-16765598"/>
+      <background color="-16507326"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="6209d" class="javax.swing.JButton" binding="Reset">
+      <component id="453e2" class="javax.swing.JLabel" binding="nome">
         <constraints>
-          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="-1"/>
-            <preferred-size width="100" height="-1"/>
-          </grid>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-148688"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-148688"/>
+          <text value="nome"/>
+          <verticalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="fe2fd" class="javax.swing.JButton" binding="Reset">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <background color="-7995336"/>
-          <font name="Berlin Sans FB Demi"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
           <foreground color="-148688"/>
+          <horizontalAlignment value="0"/>
           <text value="Reset"/>
-        </properties>
-      </component>
-      <component id="18a60" class="javax.swing.JLabel" binding="nome">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Berlin Sans FB Demi" size="18" style="1"/>
-          <foreground color="-148688"/>
-          <text value="Label"/>
+          <verticalAlignment value="0"/>
         </properties>
       </component>
     </children>

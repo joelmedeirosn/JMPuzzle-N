@@ -12,7 +12,7 @@ public class Main {
         Puzzle.setNomeUsuario(x);
         System.out.println("Tamanho do jogo:");
         y = input.nextInt();
-        Puzzle jogo1 = new Puzzle();
+        CaracterP jogo1 = new CaracterP();
         jogo1.NiveldoPuzzle(y);
 
 

@@ -11,28 +11,25 @@ import java.util.Set;
 public class Puzzle {
 
     private int tamanhoJogo;
-    private int tamanhoCelula;
     private int numCelulas;
     private int branco;
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String RESET = "\033[0m";
 
 
-    public void NiveldoPuzzle(int tamanhoJogo) {
 
-            setTamanhoJogo(tamanhoJogo);
-            setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
-            int [] celulas= new int [getNumCelulas()+1];
-            for (int i=0; i<getNumCelulas()+1;i++){
-                celulas[i]=i;
-            }
-            Randomizar(getNumCelulas(), celulas);
+    public int[] NiveldoPuzzle(int tamanhoJogo) {
+
+        setTamanhoJogo(tamanhoJogo);
+        setNumCelulas(getTamanhoJogo() * getTamanhoJogo() - 1);
+        int [] celulas= new int [getNumCelulas()+1];
+        for (int i=0; i<getNumCelulas()+1;i++){
+            celulas[i]=i;
+        }
+        return Randomizar(getNumCelulas(), celulas);
 
         }
 
 
-
-    public void Randomizar(int numCelulas, int[] celulas) {
+    public int[] Randomizar(int numCelulas, int[] celulas) {
         setNumCelulas(numCelulas);
         Random random = new Random();
         setBranco(0);
@@ -45,6 +42,7 @@ public class Puzzle {
         }
         Posicao(celulas);
         System.out.print(Arrays.toString(celulas));
+        return celulas;
 
     }
     public int[] gabarito(int x){
