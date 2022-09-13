@@ -1,5 +1,7 @@
 package Interface;
 
+import Interface.Bot.Jogo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
