@@ -1,9 +1,6 @@
 package Interface;
 
-import PuzzleN.CaracterP;
-import PuzzleN.ImagemP;
 import PuzzleN.Puzzle;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,10 +39,6 @@ public class Jogo extends JFrame implements ActionListener {
         else if(Objects.equals(tipo, "num")){addButton();}
         else if(Objects.equals(tipo, "imagem")){addButtonImg();}
         Reset.addActionListener(this);
-
-
-
-
 
         System.out.println(tipo);
 
