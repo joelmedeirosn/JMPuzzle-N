@@ -1,6 +1,6 @@
-package Interface.Bot;
+package Form.Bot;
 
-import Interface.JogoUsuario;
+import Form.JogoUsuario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,8 +13,17 @@ public abstract class Bot extends JPanel implements ActionListener {
     private JPanel grid;
     private JButton[][] botao;
     private int nivel;
-    private int[] array;
+
     private JogoUsuario usuario;
+
+    public Bot(JPanel jogoPanel, JButton reset, JLabel nome, JPanel grid, int nivel, JogoUsuario usuario) {
+        JogoPanel = jogoPanel;
+        Reset = reset;
+        this.nome = nome;
+        this.grid = grid;
+        this.nivel = nivel;
+        this.usuario = usuario;
+    }
 
     public abstract void addButton();
 
@@ -38,9 +47,6 @@ public abstract class Bot extends JPanel implements ActionListener {
 
     public JogoUsuario getUsuario() {return usuario;}
     public void setUsuario(JogoUsuario usuario) {this.usuario = usuario;}
-
-    public int[] getArray() {return array;}
-    public void setArray(int[] array) {this.array = array;}
 
     public JButton getReset() {return Reset;}
     public void setReset(JButton reset) {Reset = reset;}

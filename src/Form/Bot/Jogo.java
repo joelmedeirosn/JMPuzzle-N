@@ -1,6 +1,6 @@
-package Interface.Bot;
+package Form.Bot;
 
-import Interface.JogoUsuario;
+import Form.JogoUsuario;
 import PuzzleN.Puzzle;
 
 import javax.swing.*;
@@ -47,7 +47,7 @@ public class Jogo extends JFrame implements ActionListener {
 
     public void addButton(){
 
-        this.grid = new JPanel(new GridLayout(nivel,nivel,5,5));
+        grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));
         grid.setPreferredSize(new Dimension(500,500));
 

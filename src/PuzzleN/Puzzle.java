@@ -27,7 +27,6 @@ public class Puzzle {
     public int[] Randomizar(int numCelulas, int[] celulas) {
         setNumCelulas(numCelulas);
         Random random = new Random();
-        setBranco(0);
 
         for (int i = 0; i < celulas.length; i++) {
             int rand = random.nextInt(celulas.length);
@@ -83,9 +82,6 @@ public class Puzzle {
             }
             public int getNumCelulas () {
                 return (numCelulas);
-            }
-            public void setBranco ( int branco){
-                this.branco = branco;
             }
 
 

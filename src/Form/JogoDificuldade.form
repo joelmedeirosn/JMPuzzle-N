@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Form.JogoDificuldade">
+  <grid id="27dc6" binding="Dificuldade" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-16507326"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="45773" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="45" style="1"/>
+          <foreground color="-148688"/>
+          <text value="N-puzzle"/>
+        </properties>
+      </component>
+      <component id="ff5fd" class="javax.swing.JButton" binding="a3x3Button" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="60"/>
+            <preferred-size width="150" height="60"/>
+            <maximum-size width="150" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7995336"/>
+          <font name="Berlin Sans FB Demi" size="26" style="1"/>
+          <foreground color="-148688"/>
+          <text value="3x3"/>
+        </properties>
+      </component>
+      <component id="5ef03" class="javax.swing.JButton" binding="a4x4Button" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="60"/>
+            <preferred-size width="150" height="60"/>
+            <maximum-size width="150" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7995336"/>
+          <font name="Berlin Sans FB Demi" size="26" style="1"/>
+          <foreground color="-148688"/>
+          <text value="4x4"/>
+        </properties>
+      </component>
+      <component id="7430d" class="javax.swing.JButton" binding="voltar">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7995336"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-148688"/>
+          <text value="Voltar"/>
+        </properties>
+      </component>
+      <component id="bc440" class="javax.swing.JButton" binding="a2x2Button" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7995336"/>
+          <enabled value="true"/>
+          <font name="Berlin Sans FB Demi" size="26" style="1"/>
+          <foreground color="-148688"/>
+          <text value="2x2"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

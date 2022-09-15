@@ -1,4 +1,4 @@
-package Interface;
+package Form;
 
 public class JogoUsuario {
 
