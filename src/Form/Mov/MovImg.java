@@ -1,4 +1,10 @@
 package Form.Mov;
 
-public class MovImg {
+import java.awt.event.ActionEvent;
+
+public class MovImg extends Mov{
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

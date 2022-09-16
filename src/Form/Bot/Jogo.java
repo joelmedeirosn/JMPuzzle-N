@@ -1,6 +1,7 @@
 package Form.Bot;
 
 import Form.JogoUsuario;
+import Form.Mov.MovNum;
 import PuzzleN.Puzzle;
 
 import javax.swing.*;
@@ -59,6 +60,7 @@ public class Jogo extends JFrame implements ActionListener {
         array = a.NiveldoPuzzle(nivel);
 
         int k = 0;
+        MovNum movNum = new MovNum(botao);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -66,8 +68,12 @@ public class Jogo extends JFrame implements ActionListener {
                 if(String.valueOf(array[k]).equals("0")){
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(4,30,66));
+                    movNum.setPosicaoI(i);
+                    movNum.setPosicaoJ(j);
                     botao[i][j].setFont(new Font("",Font.BOLD,0));
                     botao[i][j].setText(String.valueOf(array[k]));
+                    botao[i][j].addActionListener(movNum);
+
 
                 }
                 else{
@@ -76,6 +82,8 @@ public class Jogo extends JFrame implements ActionListener {
                     botao[i][j].setForeground(new Color(253,187,48));
                     botao[i][j].setFont(new Font("Sans-serif",Font.BOLD,50));
                     botao[i][j].setText(String.valueOf(array[k]));
+                    botao[i][j].addActionListener(movNum);
+
                 }
                 k++;
                 grid.add(botao[i][j]);

@@ -1,4 +1,8 @@
 package Form.Mov;
 
-public abstract class Mov {
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
+public abstract class Mov implements ActionListener {
+
 }
