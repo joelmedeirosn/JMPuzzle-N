@@ -1,6 +1,8 @@
 package Form.Bot;
 
 import Form.JogoUsuario;
+import Form.Mov.MovChar;
+import Form.Mov.MovImg;
 import Form.Mov.MovNum;
 import PuzzleN.Puzzle;
 
@@ -59,6 +61,10 @@ public class Jogo extends JFrame implements ActionListener {
         Puzzle a = new Puzzle();
         array = a.NiveldoPuzzle(nivel);
 
+        while(!a.isSolvable(array)){
+            array = a.NiveldoPuzzle(nivel);
+        }
+
         int k = 0;
         MovNum movNum = new MovNum(botao);
 
@@ -114,6 +120,8 @@ public class Jogo extends JFrame implements ActionListener {
     }
 
     public void addButtonChar(){
+        /*MovChar movChar = new MovChar(botao);*/
+
         this.grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));
         grid.setPreferredSize(new Dimension(500,500));
@@ -125,7 +133,12 @@ public class Jogo extends JFrame implements ActionListener {
         Puzzle a = new Puzzle();
         array = a.NiveldoPuzzle(nivel);
 
+        while(!a.isSolvable(array)){
+            array = a.NiveldoPuzzle(nivel);
+        }
+
         int k = 0;
+        MovChar movChar = new MovChar(botao);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -133,10 +146,12 @@ public class Jogo extends JFrame implements ActionListener {
                 if(String.valueOf(array[k]).equals("0")){
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(4,30,66));
+                    movChar.setPosicaoI(i);
+                    movChar.setPosicaoJ(j);
                     botao[i][j].setFont(new Font("",Font.BOLD,0));
-
                     char c=(char)array[k];
                     botao[i][j].setText(String.valueOf(c));
+                    botao[i][j].addActionListener(movChar);
 
                 }
                 else{
@@ -149,6 +164,7 @@ public class Jogo extends JFrame implements ActionListener {
                     char c=(char)A;
 
                     botao[i][j].setText(String.valueOf(c));
+                    botao[i][j].addActionListener(movChar);
                 }
                 k++;
                 grid.add(botao[i][j]);
@@ -178,6 +194,9 @@ public class Jogo extends JFrame implements ActionListener {
     }
 
     public void addButtonImg(){
+
+        MovImg movImg = new MovImg(botao);
+
         this.grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));
         grid.setPreferredSize(new Dimension(500,500));
@@ -197,10 +216,12 @@ public class Jogo extends JFrame implements ActionListener {
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(4,30,66));
                     botao[i][j].setForeground(new Color(255, 255, 255, 255));
+                    movImg.setPosicaoI(i);
+                    movImg.setPosicaoJ(j);
                     botao[i][j].setFont(new Font("",Font.BOLD,0));
-
                     botao[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                     botao[i][j].setText(String.valueOf(array[k]));
+                    botao[i][j].addActionListener(movImg);
 
                 }
                 else{
@@ -221,6 +242,7 @@ public class Jogo extends JFrame implements ActionListener {
                     else if(usuario.getNivel()==4){
                         botao[i][j].setIcon(new ImageIcon(getClass().getResource("/bobesponja16/" + (botao[i][j].getText()) + ".png")));
                     }
+                    botao[i][j].addActionListener(movImg);
 
                 }
                 k++;

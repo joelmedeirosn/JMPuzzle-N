@@ -12,12 +12,7 @@ public class MovNum extends Mov{
     public MovNum(JButton[][] botao){
         this.botao=botao;
     }
-
-    public void setPosicaoI(int posicaoI){
-        this.posicaoI=posicaoI;
-
-    }
-
+    public void setPosicaoI(int posicaoI){this.posicaoI=posicaoI;}
     public void setPosicaoJ(int posicaoJ){
         this.posicaoJ=posicaoJ;
     }
