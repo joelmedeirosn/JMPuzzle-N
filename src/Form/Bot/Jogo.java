@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Jogo extends JFrame implements ActionListener {
@@ -22,6 +23,7 @@ public class Jogo extends JFrame implements ActionListener {
     private int nivel;
     private int[] array;
     private JogoUsuario usuario;
+
 
 
     public Jogo(String playerName,int nivel,String tipo,JogoUsuario usuario){
@@ -43,7 +45,6 @@ public class Jogo extends JFrame implements ActionListener {
         else if(Objects.equals(tipo, "imagem")){addButtonImg();}
         Reset.addActionListener(this);
 
-        System.out.println(tipo);
 
 
     }
@@ -58,15 +59,16 @@ public class Jogo extends JFrame implements ActionListener {
 
 
         botao = new JButton[nivel][nivel];
-        Puzzle a = new Puzzle();
-        array = a.NiveldoPuzzle(nivel);
+        Puzzle a = new Puzzle(nivel);
+        array = a.NiveldoPuzzle();
+        System.out.println(Arrays.deepToString(a.Gabarito()));
 
         while(!a.isSolvable(array)){
-            array = a.NiveldoPuzzle(nivel);
+            array = a.NiveldoPuzzle();
         }
 
         int k = 0;
-        MovNum movNum = new MovNum(botao);
+        MovNum movNum = new MovNum(botao,usuario,JogoPanel);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -120,7 +122,7 @@ public class Jogo extends JFrame implements ActionListener {
     }
 
     public void addButtonChar(){
-        /*MovChar movChar = new MovChar(botao);*/
+
 
         this.grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));
@@ -130,15 +132,17 @@ public class Jogo extends JFrame implements ActionListener {
 
 
         botao = new JButton[nivel][nivel];
-        Puzzle a = new Puzzle();
-        array = a.NiveldoPuzzle(nivel);
+        Puzzle a = new Puzzle(nivel);
+        array = a.NiveldoPuzzle();
+        System.out.println(Arrays.deepToString(a.GabaritoChar()));
+
 
         while(!a.isSolvable(array)){
-            array = a.NiveldoPuzzle(nivel);
+            array = a.NiveldoPuzzle();
         }
 
         int k = 0;
-        MovChar movChar = new MovChar(botao);
+        MovChar movChar = new MovChar(botao,usuario);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -204,8 +208,8 @@ public class Jogo extends JFrame implements ActionListener {
         Reset.setPreferredSize(new Dimension(100,50));
 
         botao = new JButton[nivel][nivel];
-        Puzzle a = new Puzzle();
-        array = a.NiveldoPuzzle(nivel);
+        Puzzle a = new Puzzle(nivel);
+        array = a.NiveldoPuzzle();
 
         int k = 0;
 

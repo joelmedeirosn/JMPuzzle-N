@@ -28,8 +28,12 @@ public class BotNum extends Bot {
 
 
         botao = new JButton[getNivel()][getNivel()];
-        Puzzle a = new Puzzle();
-        array = a.NiveldoPuzzle(getNivel());
+        Puzzle a = new Puzzle(super.getNivel());
+        array = a.NiveldoPuzzle();
+
+        while(!a.isSolvable(array)){
+            array = a.NiveldoPuzzle();
+        }
 
         int k = 0;
 

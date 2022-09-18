@@ -11,7 +11,7 @@ public class JogoMenu extends JFrame implements ActionListener {
     private JLabel Title;
     private JButton iniciarButton;
     private JButton tipoButton;
-    private JButton dificuldadeButton;
+    private JButton malucoButton;
     private JButton sairButton;
     private int nivel;
     private String tipo;
@@ -26,7 +26,7 @@ public class JogoMenu extends JFrame implements ActionListener {
         setVisible(true);
 
         iniciarButton.addActionListener(this);
-        dificuldadeButton.addActionListener(this);
+        malucoButton.addActionListener(this);
         sairButton.addActionListener(this);
 
 

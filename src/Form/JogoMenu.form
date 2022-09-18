@@ -52,7 +52,7 @@
           <text value="Sair"/>
         </properties>
       </component>
-      <component id="deab9" class="javax.swing.JButton" binding="dificuldadeButton" default-binding="true">
+      <component id="deab9" class="javax.swing.JButton" binding="malucoButton">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="200" height="60"/>
@@ -65,7 +65,7 @@
           <font name="Berlin Sans FB Demi" size="26" style="1"/>
           <foreground color="-148688"/>
           <horizontalTextPosition value="11"/>
-          <text value="Dificuldade"/>
+          <text value="Maluco"/>
           <verticalAlignment value="0"/>
         </properties>
       </component>

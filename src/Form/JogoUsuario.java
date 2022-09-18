@@ -6,7 +6,6 @@ public class JogoUsuario {
     private String tipo;
     private String usuario;
 
-
     public int getNivel() {return (nivel);}
 
     public void setNivel(int nivel){this.nivel = nivel;}
