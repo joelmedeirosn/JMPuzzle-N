@@ -13,13 +13,14 @@ public class MovNum extends Mov {
     private int posicaoJ;
     private JogoUsuario usuario;
 
+    private JPanel JogoPane;
     private JPanel JogoPanel;
+    private int[][] gabarito;
 
     public MovNum(JButton[][] botao, JogoUsuario usuario, JPanel JogoPanel) {
         this.botao = botao;
         this.usuario = usuario;
-
-
+        this.JogoPanel = JogoPanel;
 
 
     }
@@ -33,7 +34,9 @@ public class MovNum extends Mov {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         Puzzle a = new Puzzle(usuario.getNivel());
+
         for (int i = 0; i < this.botao.length; i++) {
             for (int j = 0; j < this.botao.length; j++) {
                 if (e.getSource() == this.botao[i][j]) {
@@ -50,12 +53,26 @@ public class MovNum extends Mov {
                         setPosicaoI(i);
                         setPosicaoJ(j);
 
-                        if (!a.Resolucao(botao)) {
-                            System.out.println("aasdfgrg");
-                        }
-                        else {
+                        if (a.Resolucao(botao)) {
+
+                            JogoPanel.setVisible(false);
+                            JogoPane = new JPanel();
+                            JogoPane.setBackground(new Color(66, 4, 4));
+                            setContentPane(JogoPane);
+
 
                         }
+                    }
+                }
+            }
+        }
+        gabarito = a.Gabarito();
+        for(int i=0; i<botao.length;i++) {
+            for(int j=0; j<botao[i].length; j++) {
+                if(String.valueOf(gabarito[i][j]).equals(botao[i][j].getText())) {
+                    if(botao[i][j].getText().equals("0")) {
+                    }else {
+                        botao[i][j].setBackground(new Color(97, 0, 143));
                     }
                 }
             }

@@ -5,8 +5,10 @@ import Form.JogoUsuario;
 import javax.swing.*;
 
 public class BotReset extends Bot  {
-    public BotReset(JPanel jogoPanel, JButton reset, JLabel nome, JPanel grid,  int nivel,  JogoUsuario usuario) {
-        super(jogoPanel, reset, nome, grid, nivel,  usuario);
+
+
+    public BotReset(String playerName, int nivel, String tipo, JogoUsuario usuario) {
+        super(playerName, nivel, tipo, usuario);
     }
 
     @Override

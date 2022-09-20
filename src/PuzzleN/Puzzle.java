@@ -12,24 +12,18 @@ public class Puzzle {
     private int numCelulas;
     private JButton[][] botoes;
 
-    public Puzzle(int tamanhoJogo){
-        this.tamanhoJogo = tamanhoJogo;
-
-    }
+    public Puzzle(int tamanhoJogo){this.tamanhoJogo = tamanhoJogo;}
     public int[] NiveldoPuzzle() {
 
         setNumCelulas(tamanhoJogo * tamanhoJogo - 1);
-        int[] celulas = new int[getNumCelulas() + 1];
-        for (int i = 0; i < getNumCelulas() + 1; i++) {
+        int[] celulas = new int[tamanhoJogo * tamanhoJogo];
+        for (int i = 0; i < tamanhoJogo * tamanhoJogo; i++) {
             celulas[i] = i;
         }
-        return Randomizar(getNumCelulas(), celulas);
+        return Randomizar(celulas);
 
     }
-
-
-    public int[] Randomizar(int numCelulas, int[] celulas) {
-        setNumCelulas(numCelulas);
+    public int[] Randomizar(int[] celulas) {
         Random random = new Random();
 
         for (int i = 0; i < celulas.length; i++) {
@@ -62,7 +56,6 @@ public class Puzzle {
 
     public int[][] Gabarito() {
         int[][] array = new int[this.tamanhoJogo][this.tamanhoJogo];
-
         for (int i = 0; i < this.tamanhoJogo; i++) {
             for (int j = 0; j < this.tamanhoJogo; j++) {
                 array[i][j] = j + (i * tamanhoJogo) + 1;

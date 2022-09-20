@@ -12,10 +12,9 @@ public class MovChar extends Mov{
     private JButton[][] botao;
     private int posicaoI;
     private int posicaoJ;
-
-
-
     private JogoUsuario usuario;
+    private int[][] gabarito;
+
 
     public MovChar(JButton[][] botao,JogoUsuario usuario){
         this.botao=botao;
@@ -59,6 +58,20 @@ public class MovChar extends Mov{
                 }
             }
         }
+        gabarito = a.Gabarito();
+        for(int i=0; i<botao.length ;i++) {
+            for(int j=0; j<botao[i].length ; j++) {
+                if(String.valueOf(gabarito[i][j]).equals(botao[i][j].getText())) {
+                    if(botao[i][j].getText().equals("0")) {
+                        continue;
+                    }else {
+                        botao[i][j].setBackground(new Color(97, 0, 143));
+                    }
+                }
+            }
+        }
     }
 }
+
+
 

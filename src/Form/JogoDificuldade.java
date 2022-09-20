@@ -40,22 +40,22 @@ public class JogoDificuldade extends JFrame implements ActionListener{
         if(e.getSource()==a2x2Button){
             setVisible(false);
             usuario.setNivel(2);
-            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
+            new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
         }
         else if(e.getSource()==a3x3Button){
             setVisible(false);
             usuario.setNivel(3);
-            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
+            new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
         }
         else if(e.getSource()==a4x4Button){
             setVisible(false);
             usuario.setNivel(4);
-            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
+            new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
         }
 
         else if(e.getSource()==voltar){
             setVisible(false);
-            JogoTipo tipo = new JogoTipo(usuario);
+            new JogoTipo(usuario);
         }
 
 

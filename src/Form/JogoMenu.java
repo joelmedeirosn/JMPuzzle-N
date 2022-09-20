@@ -42,7 +42,7 @@ public class JogoMenu extends JFrame implements ActionListener {
             JogoUsuario usuario = new JogoUsuario();
             usuario.setNomeUsuario(playerName);
 
-            JogoTipo tipo = new JogoTipo(usuario);
+            new JogoTipo(usuario);
 
 
         }

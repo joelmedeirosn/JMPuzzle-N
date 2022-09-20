@@ -16,6 +16,7 @@ import java.util.Objects;
 public class Jogo extends JFrame implements ActionListener {
 
     private JPanel JogoPanel;
+    private JPanel JogoPane;
     private JButton Reset;
     private JLabel nome;
     private JPanel grid;
@@ -50,6 +51,7 @@ public class Jogo extends JFrame implements ActionListener {
     }
 
     public void addButton(){
+
 
         grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));

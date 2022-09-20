@@ -17,7 +17,6 @@ public class JogoTipo extends JFrame implements ActionListener {
 
 
     public JogoTipo(JogoUsuario usuario){
-
         this.usuario = usuario;
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,19 +39,19 @@ public class JogoTipo extends JFrame implements ActionListener {
         if(e.getSource()==numerosButton){
             setVisible(false);
             usuario.setTipo("num");
-            JogoDificuldade dific = new JogoDificuldade(usuario);
+            new JogoDificuldade(usuario);
 
         }
         if(e.getSource()==imagensButton){
             setVisible(false);
             usuario.setTipo("imagem");
-            JogoDificuldade dific = new JogoDificuldade(usuario);
+            new JogoDificuldade(usuario);
 
         }
         if(e.getSource()==caracteresButton){
             setVisible(false);
             usuario.setTipo("char");
-            JogoDificuldade dific = new JogoDificuldade(usuario);
+            new JogoDificuldade(usuario);
 
         }
         if(e.getSource()==voltar){
