@@ -1,5 +1,7 @@
 package Form;
 
+import Form.Exception.TamanhoNome;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +17,9 @@ public class JogoMenu extends JFrame implements ActionListener {
     private JButton sairButton;
     private int nivel;
     private String tipo;
+    private String playerName;
+
+
 
     public JogoMenu(){
 
@@ -34,10 +39,10 @@ public class JogoMenu extends JFrame implements ActionListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e){
         if(e.getSource()==iniciarButton){
             setVisible(false);
-            String playerName = JOptionPane.showInputDialog(null,"Digite seu nome");
+            this.playerName = JOptionPane.showInputDialog(null,"Digite seu nome");
 
             JogoUsuario usuario = new JogoUsuario();
             usuario.setNomeUsuario(playerName);
@@ -51,7 +56,5 @@ public class JogoMenu extends JFrame implements ActionListener {
             System.exit(0);
         }
     }
-
-
 
 }

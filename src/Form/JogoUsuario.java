@@ -12,6 +12,7 @@ public class JogoUsuario {
     public String getTipo() {return (tipo);}
 
     public void setTipo(String tipo) {this.tipo = tipo;}
-    public void setNomeUsuario(String usuario){this.usuario = usuario;}
     public String getNomeUsuario(){return usuario;}
+
+    public void setNomeUsuario(String usuario){this.usuario = usuario;}
 }
