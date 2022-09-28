@@ -50,6 +50,7 @@ public class Jogo extends JFrame implements ActionListener {
 
     }
 
+
     public void addButton(){
 
 

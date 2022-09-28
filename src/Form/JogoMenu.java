@@ -1,11 +1,13 @@
 package Form;
 
+import Form.Bot.Jogo;
 import Form.Exception.TamanhoNome;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Form.Exception.TamanhoNome;
 
 public class JogoMenu extends JFrame implements ActionListener {
 
@@ -19,10 +21,16 @@ public class JogoMenu extends JFrame implements ActionListener {
     private String tipo;
     private String playerName;
 
+    private JogoUsuario usuario;
+
+
+
+
 
 
     public JogoMenu(){
 
+        this.usuario = new JogoUsuario();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(Menu);
         setSize(new Dimension(500,500));
@@ -34,27 +42,28 @@ public class JogoMenu extends JFrame implements ActionListener {
         malucoButton.addActionListener(this);
         sairButton.addActionListener(this);
 
-
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==iniciarButton){
-            setVisible(false);
-            this.playerName = JOptionPane.showInputDialog(null,"Digite seu nome");
-
-            JogoUsuario usuario = new JogoUsuario();
-            usuario.setNomeUsuario(playerName);
-
-            new JogoTipo(usuario);
-
-
+        try{
+            usuario.setNomeUsuario(JOptionPane.showInputDialog("Digite seu nome"));
+        } catch (TamanhoNome x) {
+            JOptionPane.showMessageDialog(null,x.getMessage());
+            }
         }
+        if(e.getSource()==iniciarButton && usuario.getNomeUsuario()!=null){
+                setVisible(false);
+                new JogoTipo(usuario);
+            }
 
-        else if(e.getSource()==sairButton){
-            System.exit(0);
+            else if(e.getSource()==sairButton){
+                System.exit(0);
+            }
+
         }
     }
 
-}
+
