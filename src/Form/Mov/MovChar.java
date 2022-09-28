@@ -14,11 +14,14 @@ public class MovChar extends Mov{
     private int posicaoJ;
     private JogoUsuario usuario;
     private int[][] gabarito;
+    private JPanel JogoPanel;
 
 
-    public MovChar(JButton[][] botao,JogoUsuario usuario){
+
+    public MovChar(JButton[][] botao,JogoUsuario usuario, JPanel JogoPanel){
         this.botao=botao;
         this.usuario = usuario;
+        this.JogoPanel = JogoPanel;
     }
 
     public void setPosicaoI(int posicaoI){this.posicaoI=posicaoI;}
@@ -48,11 +51,9 @@ public class MovChar extends Mov{
                         setPosicaoI(i);
                         setPosicaoJ(j);
 
-                        if (!a.ResolucaoChar(botao)) {
-                            System.out.println("aasdfgrg");
-                        }
-                        else {
-                            System.out.println("aaaaaa");
+                        if (a.Resolucao(botao)) {
+                            super.JogoGanho(JogoPanel,usuario);
+
                         }
                     }
                 }

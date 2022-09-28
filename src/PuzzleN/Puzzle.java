@@ -106,11 +106,6 @@ public class Puzzle {
         return true;
     }
 
-
-
-
-
-
     public void setNumCelulas(int numCelulas) {this.numCelulas = numCelulas;}
     public int getNumCelulas() {
         return (numCelulas);

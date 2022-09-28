@@ -51,6 +51,7 @@ public class MovImg extends Mov{
 
                         setPosicaoI(i);
                         setPosicaoJ(j);
+
                     }
                 }
             }

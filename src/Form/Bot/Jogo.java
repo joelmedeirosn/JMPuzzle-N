@@ -16,7 +16,6 @@ import java.util.Objects;
 public class Jogo extends JFrame implements ActionListener {
 
     private JPanel JogoPanel;
-    private JPanel JogoPane;
     private JButton Reset;
     private JLabel nome;
     private JPanel grid;
@@ -33,12 +32,15 @@ public class Jogo extends JFrame implements ActionListener {
         this.nivel = nivel;
         nome.setText(playerName);
 
+
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(JogoPanel);
         setSize(new Dimension(700, 700));
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+        usuario.setPanel(JogoPanel);
 
 
         if(Objects.equals(tipo, "char")){addButtonChar();}
@@ -75,7 +77,6 @@ public class Jogo extends JFrame implements ActionListener {
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
-
                 if(String.valueOf(array[k]).equals("0")){
                     botao[i][j] = new JButton();
                     botao[i][j].setBackground(new Color(4,30,66));
@@ -122,6 +123,7 @@ public class Jogo extends JFrame implements ActionListener {
         c.gridy =2;
         JogoPanel.add(Reset,c);
 
+
     }
 
     public void addButtonChar(){
@@ -145,7 +147,7 @@ public class Jogo extends JFrame implements ActionListener {
         }
 
         int k = 0;
-        MovChar movChar = new MovChar(botao,usuario);
+        MovChar movChar = new MovChar(botao,usuario,JogoPanel);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {

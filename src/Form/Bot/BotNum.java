@@ -17,7 +17,6 @@ public class BotNum extends Bot {
 
     @Override
     public void addButton(){
-
         super.tamanhoGrid();
 
         int k = 0;
