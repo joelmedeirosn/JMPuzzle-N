@@ -204,9 +204,7 @@ public class Jogo extends JFrame implements ActionListener {
 
     public void addButtonImg(){
 
-        MovImg movImg = new MovImg(botao);
-
-        this.grid = new JPanel(new GridLayout(nivel,nivel,5,5));
+        grid = new JPanel(new GridLayout(nivel,nivel,5,5));
         grid.setBackground(new Color(4, 30, 66));
         grid.setPreferredSize(new Dimension(500,500));
 
@@ -216,7 +214,12 @@ public class Jogo extends JFrame implements ActionListener {
         Puzzle a = new Puzzle(nivel);
         array = a.NiveldoPuzzle();
 
+        while(!a.isSolvable(array)){
+            array = a.NiveldoPuzzle();
+        }
+
         int k = 0;
+        MovImg movImg = new MovImg(botao,usuario,JogoPanel);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -287,7 +290,7 @@ public class Jogo extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==Reset){
             setVisible(false);
-            Jogo iniciar = new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
+            new Jogo(usuario.getNomeUsuario(),usuario.getNivel(),usuario.getTipo(),usuario);
 
         }
     }
