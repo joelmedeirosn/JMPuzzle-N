@@ -219,6 +219,7 @@ public class Jogo extends JFrame implements ActionListener {
         }
 
         int k = 0;
+
         MovImg movImg = new MovImg(botao,usuario,JogoPanel);
 
         for(int i = 0; i<nivel;i++){
