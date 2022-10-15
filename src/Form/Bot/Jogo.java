@@ -85,8 +85,6 @@ public class Jogo extends JFrame implements ActionListener {
                     botao[i][j].setFont(new Font("",Font.BOLD,0));
                     botao[i][j].setText(String.valueOf(array[k]));
                     botao[i][j].addActionListener(movNum);
-
-
                 }
                 else{
                     botao[i][j] = new JButton();
