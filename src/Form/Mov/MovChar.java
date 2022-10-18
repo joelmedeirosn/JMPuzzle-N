@@ -13,15 +13,16 @@ public class MovChar extends Mov{
     private int posicaoI;
     private int posicaoJ;
     private JogoUsuario usuario;
-    private int[][] gabarito;
-    private JPanel JogoPanel;
+    private char[][] gabarito;
+    private JFrame frame;
+    private JPanel PanelGanhar;
 
 
 
-    public MovChar(JButton[][] botao,JogoUsuario usuario, JPanel JogoPanel){
+    public MovChar(JButton[][] botao,JogoUsuario usuario, JFrame frame){
         this.botao=botao;
         this.usuario = usuario;
-        this.JogoPanel = JogoPanel;
+        this.frame = frame;
     }
 
     public void setPosicaoI(int posicaoI){this.posicaoI=posicaoI;}
@@ -51,20 +52,21 @@ public class MovChar extends Mov{
                         setPosicaoI(i);
                         setPosicaoJ(j);
 
-                        if (a.Resolucao(botao)) {
-                            super.JogoGanho(JogoPanel,usuario);
-
+                        if (a.ResolucaoChar(botao)) {
+                            frame.setVisible(false);
+                            usuario.getPanel().setVisible(false);
+                            PanelGanhar = new JPanel();
+                            super.JogoGanho(PanelGanhar);
                         }
                     }
                 }
             }
         }
-        gabarito = a.Gabarito();
+        gabarito = a.GabaritoChar();
         for(int i=0; i<botao.length ;i++) {
             for(int j=0; j<botao[i].length ; j++) {
                 if(String.valueOf(gabarito[i][j]).equals(botao[i][j].getText())) {
                     if(botao[i][j].getText().equals("0")) {
-                        continue;
                     }else {
                         botao[i][j].setBackground(new Color(97, 0, 143));
                     }

@@ -73,7 +73,7 @@ public class Jogo extends JFrame implements ActionListener {
         }
 
         int k = 0;
-        MovNum movNum = new MovNum(botao,usuario,JogoPanel);
+        MovNum movNum = new MovNum(botao,usuario,this);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {
@@ -145,7 +145,7 @@ public class Jogo extends JFrame implements ActionListener {
         }
 
         int k = 0;
-        MovChar movChar = new MovChar(botao,usuario,JogoPanel);
+        MovChar movChar = new MovChar(botao,usuario,this);
 
         for(int i = 0; i<nivel;i++){
             for(int j = 0; j<nivel; j++) {

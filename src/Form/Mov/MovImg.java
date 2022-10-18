@@ -65,7 +65,7 @@ public class MovImg extends Mov{
                         setPosicaoJ(j);
 
                         if (a.Resolucao(botao)) {
-                            super.JogoGanho(JogoPanel, usuario);
+                            super.JogoGanho(JogoPanel);
 
                         }
                     }

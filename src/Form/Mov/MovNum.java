@@ -12,13 +12,14 @@ public class MovNum extends Mov {
     private int posicaoI;
     private int posicaoJ;
     private JogoUsuario usuario;
-    private JPanel JogoPanel;
+    private JFrame frame;
+    private JPanel PanelGanhar;
     private int[][] gabarito;
 
-    public MovNum(JButton[][] botao, JogoUsuario usuario, JPanel JogoPanel) {
+    public MovNum(JButton[][] botao, JogoUsuario usuario,JFrame frame) {
         this.botao = botao;
         this.usuario = usuario;
-        this.JogoPanel = JogoPanel;
+        this.frame = frame;
     }
 
     public void setPosicaoI(int posicaoI) {
@@ -51,7 +52,10 @@ public class MovNum extends Mov {
                         setPosicaoJ(j);
 
                         if (a.Resolucao(botao)) {
-                            super.JogoGanho(JogoPanel,usuario);
+                            frame.setVisible(false);
+                            usuario.getPanel().setVisible(false);
+                            PanelGanhar = new JPanel();
+                            super.JogoGanho(PanelGanhar);
                         }
                     }
                 }
